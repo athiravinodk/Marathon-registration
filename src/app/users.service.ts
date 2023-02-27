@@ -4,15 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
   constructor() { }
 
-  // getdata(){
-  //   return localStorage.getItem('user');
-  // }
+  getData(key: string) {
+    return JSON.parse(localStorage.getItem(key) as string);
+  }
 
-  
-
-
-  
+  setData(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
 }

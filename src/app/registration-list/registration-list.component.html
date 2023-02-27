@@ -1,6 +1,21 @@
-<!-- <button class="btn btn-primary" (onClick)="listItems()">list</button> -->
-<!-- <ul>
-    <li *ngFor="let user of valuesArray">{{ user.fname }} {{ user.lname }} - {{ user.age }} years old, {{ user.gender }}, Mobile: {{ user.mobilenum }}</li>
-  </ul>
-   -->
-   <!-- <p>{{ getDataFromLocalStorage('users') }}</p> -->
+<h4>MEMBERS LIST</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Contact Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of valuesArray">
+      <td>{{ user.fname }} </td>
+      <td>{{ user.lname }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.mobilenum }}</td>
+    </tr>
+  </tbody>
+</table>

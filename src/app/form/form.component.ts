@@ -19,32 +19,24 @@ export class FormComponent implements OnInit {
       fname: new FormControl(null, [Validators.required]),
       lname: new FormControl(null, [Validators.required]),
       age: new FormControl(null, [Validators.required]),
-      gender: new FormControl('Select', [Validators.required]),
-      mobilenum: new FormControl(null, [Validators.required, Validators.minLength(10)])
+      gender: new FormControl(null, [Validators.required]),
+      mobilenum: new FormControl(null, [Validators.required])
     })
   }
 
   onSubmit() {
     console.log('submitted');
-    const formValues = this.regForm.value;
-    this.valuesArray.push(formValues); 
-    localStorage.setItem('users', JSON.stringify(this.valuesArray));
+    let storedData = this.userService.getData('users');
+    if (!storedData) {
+      storedData = [];
+    }
+    storedData.push(this.regForm.value);
+    this.userService.setData('users', storedData);
     this.message = true;
     this.regForm.reset({});
-
   }
   removeMsg() {
     this.message = false;
   }
-
-  // listItems() {
-  //   this.valuesArray = this.userService.getUsers();
-  //   console.log(this.valuesArray);
-  // }
-  getUsers(): any[] {
-    const userString = localStorage.getItem('users') as string;
-    const users = JSON.parse(userString);
-    return users || [];
-  }
-
 }
+
