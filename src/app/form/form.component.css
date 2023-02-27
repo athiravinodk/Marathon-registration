@@ -1,0 +1,39 @@
+.registration-form {
+    width: 80vw;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.row {
+    width: 30vw;
+    margin: auto;
+    padding: 5px 0px;
+}
+
+h3 {
+    text-align: center;
+    margin: 20px;
+    font-weight: 900;
+}
+
+button {
+    margin-top: 30px;
+}
+
+.alert {
+    width: 30vw;
+    margin: auto;
+    white-space: pre;
+    color: black;
+}
+
+.close-btn {
+    background: darkseagreen;
+    border-radius: 5px;
+    margin: 0 !important;
+}
+
+select {
+    -webkit-appearance: listbox !important;
+}

@@ -1,0 +1,30 @@
+.navbar {
+    background: mediumseagreen;
+}
+
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: 900;
+}
+
+.logo {
+    width: 200px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button-head {
+    color: black;
+    margin: 0px 5px;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+}
+
+.button-head:hover{
+    color: white;
+}

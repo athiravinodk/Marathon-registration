@@ -1,0 +1,60 @@
+<div class="registration-form">
+    <div class="container-fluid">
+        <h3>REGISTRATION FORM</h3>
+        <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+            Registartion completed successfully!
+            <button type="button" class="close-btn" data-dismiss="alert" aria-label="Close" (click)="removeMsg()">X</button>
+        </div>
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" formControlName="fname" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" formControlName="lname" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" formControlName="age" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="gender">Gender</label><br>
+                        <select name="gender" name="gender" formControlName="gender" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="mobilenum">Contact Number</label>
+                        <input type="tel" id="mobilenum" name="mobilenumber" class="form-control" formControlName="mobilenum">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success" [disabled]="!regForm.valid">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
