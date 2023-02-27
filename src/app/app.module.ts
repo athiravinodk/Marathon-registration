@@ -8,7 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { RegistrationListComponent } from './registration-list/registration-list.component';
 import { HeaderComponent } from './header/header.component';
-import { UserService } from './users.service'
+import { UserService } from './users.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { UserService } from './users.service'
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

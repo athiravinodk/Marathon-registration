@@ -22,18 +22,23 @@ button {
 }
 
 .alert {
-    width: 30vw;
+    width: 50vw;
     margin: auto;
     white-space: pre;
     color: black;
 }
 
 .close-btn {
-    background: darkseagreen;
-    border-radius: 5px;
     margin: 0 !important;
+    border: none;
+    background: transparent;
+    color: black;
 }
 
 select {
     -webkit-appearance: listbox !important;
+}
+
+.help-block{
+    color: red;
 }

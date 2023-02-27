@@ -25,6 +25,7 @@ ul {
     border: none;
 }
 
-.button-head:hover{
-    color: white;
+.active{
+    background-color: white;
 }
+
