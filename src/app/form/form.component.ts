@@ -16,6 +16,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.regForm = new FormGroup({
+      id: new FormControl(),
       fname: new FormControl(null, [Validators.required]),
       lname: new FormControl(null, [Validators.required]),
       age: new FormControl(null, [Validators.required]),
@@ -26,15 +27,21 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     console.log('submitted');
+
     let storedData = this.userService.getData('users');
     if (!storedData) {
       storedData = [];
     }
-    storedData.push(this.regForm.value);
+    let lastId = storedData.length > 0 ? storedData[storedData.length - 1].id : 0;
+    let newId = lastId + 1;
+    let formValueWithId = { ...this.regForm.value, id: newId };
+    storedData.push(formValueWithId);
     this.userService.setData('users', storedData);
+
     this.message = true;
     this.regForm.reset({});
   }
+
   removeMsg() {
     this.message = false;
   }

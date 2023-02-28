@@ -12,8 +12,11 @@ table {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.save-btn {
-    float: right;
+button {
+    margin-left: 5px;
+    font-size: 12px;
+    padding: 2px 10px;
+    cursor: pointer;
 }
 
 .title{

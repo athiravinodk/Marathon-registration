@@ -10,6 +10,8 @@ import { RegistrationListComponent } from './registration-list/registration-list
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './users.service';
 import { FormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     FormComponent,
     RegistrationListComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
