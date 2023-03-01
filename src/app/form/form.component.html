@@ -58,6 +58,19 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
+                        <label for="category">Category</label><br>
+                        <input id="3k" type="radio" value="3K" name="category" formControlName="category">
+                        <label for="3k">3K</label><br>
+                        <input id="10k" type="radio" value="10K" name="category" formControlName="category">
+                        <label for="10Kk">10K</label><br>
+                        <input id="21k" type="radio" value="21K" name="category" formControlName="category">
+                        <label for="21k">21K</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
                         <label for="mobilenum">Contact Number</label>
                         <input type="number" pattern="[0-9]{10}" id="mobilenum" name="mobilenumber" class="form-control"
                             formControlName="mobilenum">
@@ -68,7 +81,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-success" [disabled]="!regForm.valid">Register</button>
+                    <button type="submit" class="btn btn-success">Register</button>
                 </div>
             </div>
         </form>

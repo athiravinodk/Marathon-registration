@@ -21,25 +21,28 @@ export class FormComponent implements OnInit {
       lname: new FormControl(null, [Validators.required]),
       age: new FormControl(null, [Validators.required]),
       gender: new FormControl(null, [Validators.required]),
+      category: new FormControl(null, [Validators.required]),
       mobilenum: new FormControl(null, [Validators.required])
     })
   }
 
   onSubmit() {
-    console.log('submitted');
-
-    let storedData = this.userService.getData('users');
-    if (!storedData) {
-      storedData = [];
+    if (this.regForm.valid) {
+      console.log('submitted');
+      let storedData = this.userService.getData('users');
+      if (!storedData) {
+        storedData = [];
+      }
+      let lastId = storedData.length > 0 ? storedData[storedData.length - 1].id : 0;
+      let newId = lastId + 1;
+      let formValueWithId = { ...this.regForm.value, id: newId };
+      storedData.push(formValueWithId);
+      this.userService.setData('users', storedData);
+      this.regForm.reset({});
+      this.message = true;
+    } else {
+      alert('Please fill all required fields!');
     }
-    let lastId = storedData.length > 0 ? storedData[storedData.length - 1].id : 0;
-    let newId = lastId + 1;
-    let formValueWithId = { ...this.regForm.value, id: newId };
-    storedData.push(formValueWithId);
-    this.userService.setData('users', storedData);
-
-    this.message = true;
-    this.regForm.reset({});
   }
 
   removeMsg() {
