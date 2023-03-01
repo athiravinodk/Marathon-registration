@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../users.service';
+import { UserService } from '../shared/users.service';
 
 @Component({
   selector: 'app-form',
@@ -8,7 +8,6 @@ import { UserService } from '../users.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
   regForm!: FormGroup;
   message: boolean = false;
   valuesArray: any[] = [];
