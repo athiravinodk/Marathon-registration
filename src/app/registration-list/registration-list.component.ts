@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users.service';
+import { UserService } from '../shared/users.service';
 
 @Component({
   selector: 'app-registration-list',
@@ -8,13 +8,10 @@ import { UserService } from '../users.service';
 })
 export class RegistrationListComponent implements OnInit {
   valuesArray: any[] = [];
-
-
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.valuesArray = this.userService.getData('users');
-
   }
 
   saveData(user: { id: number; time: any; }) {
