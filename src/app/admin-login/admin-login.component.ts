@@ -11,7 +11,7 @@ import { AuthService } from '../shared/auth.service';
 
 
 export class AdminLoginComponent implements OnInit {
-  admin!: string;
+  username!: string;
   password!: string;
   constructor(private authService: AuthService,
     private router: Router) { }

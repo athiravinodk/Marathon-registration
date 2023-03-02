@@ -9,7 +9,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class HeaderComponent implements OnInit {
   loggedIn = false;
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
