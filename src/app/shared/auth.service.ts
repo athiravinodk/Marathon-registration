@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -6,21 +7,21 @@ import { Injectable } from '@angular/core';
 
 export class AuthService {
   private users = [
-    { admin: 'admin', password: 'admin123' },
+    { username: 'admin', password: 'admin123' },
   ];
   constructor() { }
 
-  authUser(user: { admin: string, password: string }): boolean {
-    const authenticatedUser = this.users.find(u => u.admin === user.admin && u.password === user.password);
+  authUser(user: User): boolean {
+    const authenticatedUser = this.users.find(u => u.username === user.username && u.password === user.password);
     if (authenticatedUser) {
-      localStorage.setItem('adminUser', JSON.stringify(authenticatedUser));
+      localStorage.setItem('currentUser', JSON.stringify(authenticatedUser.username));
       return true;
     }
     return false;
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('adminUser') as string);
+    return JSON.parse(localStorage.getItem('currentUser') as string);
   }
 
   isLoggedIn() {
@@ -28,7 +29,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('adminUser');
+    localStorage.removeItem('currentUser');
   }
 }
 

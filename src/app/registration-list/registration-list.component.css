@@ -26,3 +26,7 @@ button {
 .title{
     background: mediumseagreen;
 }
+
+.time{
+    width: 50px;
+}
