@@ -1,3 +1,7 @@
+/*
+* Styles related to registration list page
+*/
+
 h4 {
     text-align: center;
     margin: auto;
@@ -21,4 +25,8 @@ button {
 
 .title{
     background: mediumseagreen;
+}
+
+.time{
+    width: 50px;
 }
