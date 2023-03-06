@@ -8,7 +8,9 @@
       <th>Gender</th>
       <th>Category</th>
       <th>Contact Number</th>
+      <th>Photo</th>
       <th>Time (min)</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -19,8 +21,12 @@
       <td>{{ user.gender }}</td>
       <td>{{ user.category}}</td>
       <td>{{ user.mobilenum }}</td>
-      <td><input type="number" [(ngModel)]="user.time" class="time"><button class="btn btn-success"
-          (click)="saveData(user)">Save</button></td>
+      <td>
+        <img [src]="user.image" height="50">
+        <input type="file" (change)="onSelectImg($event, user)">
+      </td>
+      <td><input type="number" [(ngModel)]="user.time" class="time"></td>
+      <td><button class="btn btn-success" (click)="onSave(user)">Save</button></td>
     </tr>
   </tbody>
 </table>

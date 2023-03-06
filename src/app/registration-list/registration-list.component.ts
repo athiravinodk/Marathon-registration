@@ -8,22 +8,39 @@ import { UserService } from '../shared/users.service';
 })
 export class RegistrationListComponent implements OnInit {
   valuesArray: any[] = [];
+  url = "";
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.valuesArray = this.userService.getData('users');
   }
 
-  saveData(user: { id: number; time: any; }) {
-    console.log('submit');
+
+  onSelectImg(e: any, user: any) {
+    const file: File = e.target.files[0];
+    const reader: FileReader = new FileReader();
+
+    reader.onloadend = () => {
+      user.image = reader.result as string;
+    };
+    reader.readAsDataURL(file);
+    if (user.image) {
+      localStorage.setItem('image_$user.id', user.image);
+    }
+  }
+
+
+  onSave(user: { id: number; image: any; time: any; }) {
     let data = JSON.parse(localStorage.getItem('users') as string);
     for (let i = 0; i < data.length; i++) {
       if (data[i].id === user.id) {
         data[i].time = user.time;
+        data[i].image = user.image;
         break;
       }
     }
     localStorage.setItem('users', JSON.stringify(data));
   }
+
 }
 
