@@ -1,0 +1,15 @@
+.weather-details {
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.card{
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    width: 250px;
+}
+
+ul{
+    list-style-type: none;
+}

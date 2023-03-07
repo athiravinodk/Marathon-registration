@@ -10,6 +10,9 @@
                 <li routerLinkActive="active">
                     <button class="btn button-head" routerLink="/admin-login">Registration List</button>
                 </li>
+                <li routerLinkActive="active">
+                    <button class="btn button-head" routerLink="/weather">Weather</button>
+                </li>
                 <li>
                     <button *ngIf="authService.isLoggedIn()" class="btn button-head" (click)="onLogout()">Logout</button>
                 </li>

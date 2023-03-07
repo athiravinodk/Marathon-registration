@@ -12,6 +12,8 @@ import { UserService } from './shared/users.service';
 import { FormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AuthService } from './shared/auth.service';
+import { WeatherComponent } from './weather/weather.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { AuthService } from './shared/auth.service';
     FormComponent,
     RegistrationListComponent,
     HeaderComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { AuthService } from './shared/auth.service';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [UserService, AuthService],
   bootstrap: [AppComponent]
