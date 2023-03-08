@@ -1,16 +1,17 @@
+<h3>Weather Forecast</h3>
 <div class="col-md-6 weather-details">
-    <h3>Weather Updates</h3>
-    <input type="text" class="search-bar" placeholder="Enter a location" name="cityName" [(ngModel)]="cityName" />
-    <button type="submit" class="btn btn-success search" (click)="onSubmit(cityName)">
+    <input type="text" class="search-bar" placeholder="Search a location" name="cityName" [(ngModel)]="cityName" />
+    <button type="submit" class="btn btn-success search-btn" (click)="onSubmit(cityName)">
         Search
     </button>
 </div>
 <div class="card" *ngIf="weatherData">
+    <h4>{{weatherData.name}}</h4>
     <ul>
         <li>Temperature: {{ (weatherData.main.temp - 273.15).toFixed(2) }} &deg;C</li>
         <li>Wind Speed: {{weatherData.wind.speed}}</li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Humidity: {{weatherData.main.humidity}}</li>
+        <li>Visibility: {{weatherData.visibility}}</li>
+        <li>Feels like {{weatherData.main.feels_like}}</li>
     </ul>
 </div>

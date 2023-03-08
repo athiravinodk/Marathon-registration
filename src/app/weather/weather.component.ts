@@ -12,7 +12,6 @@ import { WeatherData } from '../shared/models/weather.model';
 
 
 export class WeatherComponent implements OnInit {
-  main: any;
   weatherData?: WeatherData;
   cityName!: string;
   constructor(private http: HttpClient) { }
