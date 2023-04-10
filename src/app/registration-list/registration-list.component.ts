@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/users.service';
+import { User } from '../shared/models/users';
 
 @Component({
   selector: 'app-registration-list',
@@ -7,12 +8,13 @@ import { UserService } from '../shared/users.service';
   styleUrls: ['./registration-list.component.css']
 })
 export class RegistrationListComponent implements OnInit {
-  valuesArray: any[] = [];
+  valuesArray: any = User;
   url = "";
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.valuesArray = this.userService.getData('users');
+    this.valuesArray = this.userService.getData();
   }
 
 
