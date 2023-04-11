@@ -1,19 +1,19 @@
 export class User {
     public id: string;
-    public fname: string;
-    public lname: string;
+    public firstName: string;
+    public lastName: string;
     public age: string;
     public gender: string;
     public category: string;
-    public mobilenum: number;
+    public contactNumber: number;
 
-    constructor(id: string, fname: string, lname: string, age: string, gender: string, category: string, mobilenum: number) {
+    constructor(id: string, firstName: string, lastName: string, age: string, gender: string, category: string, contactNumber: number) {
         this.id = id;
-        this.fname = fname;
-        this.lname = lname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.gender = gender;
         this.category = category;
-        this.mobilenum = mobilenum;
+        this.contactNumber = contactNumber;
     }
 }

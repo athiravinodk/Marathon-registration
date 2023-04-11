@@ -15,12 +15,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of valuesArray">
-      <td>{{ user.fname }} </td>
-      <td>{{ user.lname }}</td>
+      <td>{{ user.firstName }} </td>
+      <td>{{ user.lastName }}</td>
       <td>{{ user.age }}</td>
       <td>{{ user.gender }}</td>
       <td>{{ user.category}}</td>
-      <td>{{ user.mobilenum }}</td>
+      <td>{{ user.contactNumber }}</td>
       <td>
         <img [src]="user.image" height="50">
         <input type="file" (change)="onSelectImg($event, user)">

@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
   onSubmit() {
     if (this.regForm.valid) {
       console.log('submitted');
-      let storedData = this.userService.getData();
+      // let storedData = this.userService.getData();
       // if (!storedData) {
       //   storedData = [];
       // }
@@ -43,7 +43,7 @@ export class FormComponent implements OnInit {
       alert('Please fill all required fields!');
     }
   }
-
+ 
   removeMsg() {
     this.message = false;
   }
