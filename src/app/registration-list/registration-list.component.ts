@@ -9,20 +9,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./registration-list.component.css']
 })
 export class RegistrationListComponent implements OnInit {
-  valuesArray: any ;
+  valuesArray: any;
   url = "";
 
   constructor(private userService: UserService,
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    // this.valuesArray = this.userService.getData();
-    this.valuesArray = this.http.get<User>('/api/User/get').subscribe((response: any) => {
-    console.log(response);
-  });
+    this.http.get<User>('/api/User/get').subscribe((response: any) => {
+      this.valuesArray = response;
+    });
   }
-
-
 
   onSelectImg(e: any, user: any) {
     const file: File = e.target.files[0];

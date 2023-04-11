@@ -7,7 +7,7 @@ import { catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  base_url = "http://localhost:800/api/User";
+ valuesArray: any;
   constructor(private http: HttpClient) { }
 
   // getData(key: string) {
@@ -15,11 +15,21 @@ export class UserService {
   // }
 
   getData() {
-    return this.http.get<User[]>(this.base_url + '/get')
+    // this.http.get<User>('/api/User/get').subscribe((response: any) => {
+    // });
+    this.http.get<User>('/api/User/get').subscribe((response: any) => {
+      this.valuesArray = response;
+    });
   }
-  setData(key: string, value: any) {
-    localStorage.setItem(key, JSON.stringify(value));
-  }
+  // setData(key: string, value: any) {
+  //   localStorage.setItem(key, JSON.stringify(value));
+  // }
+
+  // postData(){
+  //   this.http.post('/api/User/add', this.data).subscribe((response: any) => {
+  //     console.log(response);
+  //   });
+  // }
 
   
 }
