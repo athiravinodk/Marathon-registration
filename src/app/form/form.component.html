@@ -14,9 +14,9 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div>
-                        <label for="fname">First Name</label>
-                        <input type="text" id="fname" name="firstname" formControlName="fname" class="form-control">
-                        <span *ngIf="regForm.get('fname')?.touched && !regForm.get('fname')?.valid"
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstname" formControlName="firstName" class="form-control">
+                        <span *ngIf="regForm.get('firstName')?.touched && !regForm.get('firstName')?.valid"
                             class="help-block">Please enter the valid Name!</span>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="lname">Last Name</label>
-                        <input type="text" id="lname" name="lastname" formControlName="lname" class="form-control">
-                        <span *ngIf="regForm.get('lname')?.touched && !regForm.get('lname')?.valid"
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastname" formControlName="lastName" class="form-control">
+                        <span *ngIf="regForm.get('lastName')?.touched && !regForm.get('lastName')?.valid"
                             class="help-block">Please enter the valid Name!</span>
                     </div>
                 </div>
@@ -71,10 +71,10 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="mobilenum">Contact Number</label>
-                        <input type="number" pattern="[0-9]{10}" id="mobilenum" name="mobilenumber" class="form-control"
-                            formControlName="mobilenum">
-                        <span *ngIf="regForm.get('mobilenum')?.touched && !regForm.get('mobilenum')?.valid"
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="number" pattern="[0-9]{10}" id="contactNumber" name="contactNumber" class="form-control"
+                            formControlName="contactNumber">
+                        <span *ngIf="regForm.get('contactNumber')?.touched && !regForm.get('contactNumber')?.valid"
                             class="help-block">Please enter a valid phone number!</span>
                     </div>
                 </div>
