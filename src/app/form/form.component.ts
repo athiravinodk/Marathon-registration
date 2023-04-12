@@ -28,15 +28,15 @@ export class FormComponent implements OnInit {
   onSubmit() {
     if (this.regForm.valid) {
       console.log('submitted');
-      let storedData = this.userService.getData('users');
-      if (!storedData) {
-        storedData = [];
-      }
-      let lastId = storedData.length > 0 ? storedData[storedData.length - 1].id : 0;
-      let newId = lastId + 1;
-      let formValueWithId = { ...this.regForm.value, id: newId };
-      storedData.push(formValueWithId);
-      this.userService.setData('users', storedData);
+      let storedData = this.userService.getData();
+      // if (!storedData) {
+      //   storedData = [];
+      // }
+      // let lastId = storedData.length > 0 ? storedData[storedData.length - 1].id : 0;
+      // let newId = lastId + 1;
+      // let formValueWithId = { ...this.regForm.value, id: newId };
+      // storedData.push(formValueWithId);
+      // this.userService.setData('users', storedData);
       this.regForm.reset({});
       this.message = true;
     } else {

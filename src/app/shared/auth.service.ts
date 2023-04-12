@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from './models/user';
+import { Admin } from './models/admin';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class AuthService {
   ];
   constructor() { }
 
-  authUser(user: User): boolean {
+  authUser(user: Admin): boolean {
     const authenticatedUser = this.users.find(u => u.username === user.username && u.password === user.password);
     if (authenticatedUser) {
       localStorage.setItem('currentUser', JSON.stringify(authenticatedUser.username));
