@@ -30,7 +30,6 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     if (this.regForm.valid) {
-      console.log('submitted');
       let data = {
         "FirstName": this.regForm.value.firstName,
         "LastName": this.regForm.value.lastName,
@@ -40,6 +39,7 @@ export class FormComponent implements OnInit {
         "ContactNumber": this.regForm.value.contactNumber
       }
       this.http.post('/api/User/add', data ).subscribe((response: any) => {
+        this.valuesArray = response;
       });
       this.regForm.reset({});
       this.message = true;

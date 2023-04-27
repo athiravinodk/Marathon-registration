@@ -20,8 +20,10 @@ export class AdminLoginComponent implements OnInit {
   }
 
   onLogin(loginForm: NgForm) {
-    console.log(loginForm.value);
-    const user = this.authService.authUser(loginForm.value);
+    // console.log(loginForm.value);
+    const user = this.authService.authUser(loginForm.value).subscribe({
+      
+    })
     if (user) {
       console.log('Login Successful');
       this.router.navigate(['/registration-list']);
@@ -29,6 +31,6 @@ export class AdminLoginComponent implements OnInit {
       console.log('Login not successsful');
       alert('Incorrect admin or password');
     }
-  }
+   }
 
 }

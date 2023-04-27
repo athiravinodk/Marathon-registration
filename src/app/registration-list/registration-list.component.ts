@@ -12,6 +12,7 @@ export class RegistrationListComponent implements OnInit {
   valuesArray: any;
   url = "";
 
+
   constructor(private userService: UserService,
     private http: HttpClient) { }
 
@@ -19,6 +20,7 @@ export class RegistrationListComponent implements OnInit {
     this.http.get<User>('/api/User/get').subscribe((response: any) => {
       this.valuesArray = response;
     });
+    // this.userService.getData();
   }
 
   onSelectImg(e: any, user: any) {
@@ -34,18 +36,38 @@ export class RegistrationListComponent implements OnInit {
     }
   }
 
+ 
 
-  onSave(user: { id: number; image: any; time: any; }) {
+  onSave(user: { id: number; image: any; time:any}) {
+   this.http.put('/api/User/edit/' + user.id, this.valuesArray).subscribe((res: any) => {
+    console.log(res);
+   });
     let data = JSON.parse(localStorage.getItem('users') as string);
     for (let i = 0; i < data.length; i++) {
       if (data[i].id === user.id) {
-        data[i].time = user.time;
         data[i].image = user.image;
         break;
       }
     }
     localStorage.setItem('users', JSON.stringify(data));
   }
+
+  // onSave(user: { id: number; image: any; time: any }) {
+  //   if (user.time) {
+  //     this.http.put<User>('/api/User/edit', user);
+  //   }
+  //   if (user.image) {
+  //     let data = JSON.parse(localStorage.getItem('users') as string);
+  //     for (let i = 0; i < data.length; i++) {
+  //       if (data[i].id === user.id) {
+  //         // data[i].time = user.time;
+  //         data[i].image = user.image;
+  //         break;
+  //       }
+  //     }
+  //     localStorage.setItem('users', JSON.stringify(data));
+  //   }
+  // }
 
 }
 
